@@ -14,7 +14,7 @@
         <header>
             <h3 class="text-center font-weight-bold mb-5">Formulir Pendaftaran Siswa Baru</h3>
         </header>
-        <form action="create-pendaftar.php" method="POST">
+        <form action="/tugas-10/create-pendaftar.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nama">Nama: </label>
                 <input type="text" class="form-control" name="nama" placeholder="Nama lengkap"/>
@@ -38,6 +38,11 @@
                     </label>
                 </div>
             </fieldset>
+            <div class="mb-3">
+                <label for="foto" class="form-label">Pas foto</label>
+                <input class="form-control" type="file" name="foto" id="foto" accept=".png, .jpg, .jpeg" required>
+                <img src="" style="max-height: 300px; width: auto; display: block; margin: 0 auto; border-radius: 2rem" id="previewImg">
+            </div>
             <div class="form-group">
                 <label for="agama">Agama: </label>
                 <select class="form-control" name="agama">
@@ -57,5 +62,20 @@
             </div>
         </form>
     </div>
+
+    <script>
+        $('#foto').change(function(e) {
+            if (e.target.files && e.target.files[0]) {
+                let reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#previewImg').addClass('mt-3');
+                    $('#previewImg').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(e.target.files[0]); // convert to base64 string
+            }
+        });
+    </script>
 </body>
 </html>

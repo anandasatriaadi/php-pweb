@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include("./config.php");
 
 if(isset($_POST['simpan'])){
     /* ======== AMBIL DATA DARI POST REQUEST ======== */
@@ -16,7 +16,7 @@ if(isset($_POST['simpan'])){
     $query = mysqli_query($db, $sql);
 
     if( $query ) {
-        header('Location: daftar-pendaftar.php');
+        header('Location: /tugas-09/daftar-pendaftar.php');
     } else {
         die("Gagal menyimpan perubahan...");
     }

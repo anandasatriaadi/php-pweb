@@ -35,10 +35,10 @@
 <body class="gradient">
 	<div class="main-container">
         <div class="card" style="padding: 2rem; border: none;">
-            <h3 style="text-align: center;">Menu Tugas PHP</h3>
+            <h3>Pendaftaran Siswa SD Joh Kaja</h3>
             <hr>
-            <a class="btn btn-primary btn-lg btn-block" href="/tugas-09/index.php">Pendaftaran Siswa</a>
-            <a class="btn btn-primary btn-lg btn-block" href="/tugas-10/index.php">Pendaftaran Siswa dengan Foto</a>
+            <a class="btn btn-primary btn-lg btn-block" href="/tugas-10/form-daftar.php">Daftar Sebagai Siswa</a>
+            <a class="btn btn-primary btn-lg btn-block" href="/tugas-10/daftar-pendaftar.php">Daftar Siswa Pendaftar</a>
             <?php if(isset($_GET['status'])): ?>
             <?php
                 if($_GET['status'] == 'sukses'){

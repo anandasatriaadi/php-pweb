@@ -1,4 +1,4 @@
-<?php include("config.php"); ?>
+<?php include("./config.php"); ?>
 
 <!DOCTYPE html>
 <html>
@@ -33,12 +33,13 @@
                     <th scope="col">Jenis Kelamin</th>
                     <th scope="col">Agama</th>
                     <th scope="col">Sekolah Asal</th>
+                    <th scope="col">Foto</th>
                     <th scope="col" style="display: flex; justify-content: center;">Tindakan</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $sql = "SELECT * FROM pendaftar";
+                $sql = "SELECT * FROM pendaftar_image";
                 $query = mysqli_query($db, $sql);
                 while($siswa = mysqli_fetch_array($query)){
                     echo "<tr>";
@@ -48,9 +49,11 @@
                     echo "<td>".$siswa['jenis_kelamin']."</td>";
                     echo "<td>".$siswa['agama']."</td>";
                     echo "<td>".$siswa['sekolah_asal']."</td>";
+                    echo "<td><div style='height: 100px; width: 100px; background-image: url(./images/".$siswa['foto'].");
+                            background-size: cover; background-position: center center; border-radius: 10px;'></td>"; 
                     echo "<td style='display: flex; justify-content: center;'>";
-                    echo "<a class='btn btn-warning' style='margin-right: 1rem' href='form-edit.php?id=".$siswa['id']."'>Edit</a>";
-                    echo "<a class='btn btn-danger' href='hapus-pendaftar.php?id=".$siswa['id']."'>Hapus</a>";
+                    echo "<a class='btn btn-warning' style='margin-right: 1rem' href='/tugas-10/form-edit.php?id=".$siswa['id']."'>Edit</a>";
+                    echo "<a class='btn btn-danger' href='/tugas-10/hapus-pendaftar.php?id=".$siswa['id']."'>Hapus</a>";
                     echo "</td>";
                     echo "</tr>";
                 }

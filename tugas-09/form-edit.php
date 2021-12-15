@@ -1,5 +1,5 @@
 <?php
-include("config.php");
+include("./config.php");
 
 if( !isset($_GET['id']) ){
     header('Location: daftar-pendaftar.php');
@@ -44,7 +44,7 @@ if( mysqli_num_rows($query) < 1 ){
             <h3 class="text-center font-weight-bold my-4">Formulir Edit Siswa</h3>
         </header>
 
-        <form action="edit-pendaftar.php" method="POST">
+        <form action="/tugas-09/edit-pendaftar.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
 
             <div class="form-group">
